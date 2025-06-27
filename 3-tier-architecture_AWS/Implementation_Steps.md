@@ -63,7 +63,7 @@ Update the `**application-code/app-tier/DbConfig.js**` file with your database c
 Install Node.js and PM2:
 
 ```bash
-curl -o- https://raw.githubusercontent.com/avizway1/aws_3tier_architecture/main/install.sh | bash
+curl -o- https://raw.githubusercontent.com/AWS_3tier_architecture/3-tier-architecture_AWS/main/install.sh | bash
 source ~/.bashrc
 
 nvm install 16
@@ -76,7 +76,7 @@ Download application code from S3 and start the application:
 
 ```bash
 cd ~/
-aws s3 cp s3://3tierproject-avinash/application-code/app-tier/ app-tier --recursive
+aws s3 cp s3://3tierproject/application-code/app-tier/ app-tier --recursive
 
 cd ~/app-tier
 npm install
@@ -111,13 +111,13 @@ internal-app-alb-574972862.ap-south-1.elb.amazonaws.com
 Install Node.js and Nginx on the web tier:
 
 ```bash
-curl -o- https://raw.githubusercontent.com/avizway1/aws_3tier_architecture/main/install.sh | bash
+curl -o- https://raw.githubusercontent.com/AWS_3tier_architecture/3-tier-architecture_AWS/main/install.sh | bash
 source ~/.bashrc
 nvm install 16
 nvm use 16
 
 cd ~/
-aws s3 cp s3://3tierproject-avinash/application-code/web-tier/ web-tier --recursive
+aws s3 cp s3://3tierproject/application-code/web-tier/ web-tier --recursive
 
 cd ~/web-tier
 npm install
@@ -133,7 +133,7 @@ cd /etc/nginx
 ls
 
 sudo rm nginx.conf
-sudo aws s3 cp s3://3tierproject-avinash/application-code/nginx.conf .
+sudo aws s3 cp s3://3tierproject/application-code/nginx.conf .
 
 sudo service nginx restart
 
